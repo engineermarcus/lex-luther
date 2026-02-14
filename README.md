@@ -32,7 +32,7 @@ git clone https://github.com/engineermarcus/lex-luther && cd lex-luther
 *setup the bot according to your preferences Ctrl + S to save and Ctrl + q to quit*
 
 ```sh
-cp -r example.settings settings.js && micro settings.js && npm install
+cp -r example.settings.js settings.js && micro settings.js && npm install
 ```
 **RUN**
 
