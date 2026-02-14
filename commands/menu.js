@@ -2,7 +2,7 @@ import { BOT_NAME, BOT_VERSION, PREFIX, OWNER_NUMBER } from '../settings.js';
 
 const MENU_IMAGE = 'https://files.catbox.moe/wmae3y.jpeg';
 const CHANNEL_JID = '120363426440331517@newsletter';
-const CHANNEL_NAME = 'Luther MD';
+const CHANNEL_NAME = 'Luthor MD';
 
 function getMenuText() {
     return `
@@ -20,15 +20,18 @@ function getMenuText() {
 ╔════════════════════
 ║ ${PREFIX}sticker / ${PREFIX}s
 ║ ${PREFIX}toimg / ${PREFIX}toimage  
-║ ${PREFIX}tts <text>
-║ ${PREFIX}translate <lang> <text>
+║ ${PREFIX}tts <text or reply>
+║ ${PREFIX}swahili / ${PREFIX}english
+║ ${PREFIX}french / ${PREFIX}spanish
+║ ${PREFIX}arabic / ${PREFIX}german
+║ _(reply or write text after)_
 ╚════════════════════
 
 ⚙️ *CORE COMMANDS*
 ╔════════════════════
 ║ ${PREFIX}ping
 ║ ${PREFIX}alive
-║ ${PREFIX}menu
+║ ${PREFIX}menu / ${PREFIX}help
 ╚════════════════════
 
 ━━━━━━━━━━━━━━━━━━━━━━

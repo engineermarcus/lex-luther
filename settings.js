@@ -3,7 +3,7 @@ export const SESSION_MANAGER_URL = 'http://localhost:3000';
 export const SESSION_ID = 'Neiman_fast-cagey-egypt'; // e.g. "apple-river-stone"
 
 // ─── Bot Identity ──────────────────────────────────────────────────────────────
-export const BOT_NAME = 'Luther MD';
+export const BOT_NAME = 'Luthor MD';
 export const BOT_VERSION = '1.0.0';
 export const OWNER_NUMBER = '254725693306'; // your number, no +
 export const OWNER_NAME = 'Neiman Marcus';
