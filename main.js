@@ -332,11 +332,7 @@ async function startBot() {
 
             // ── Enforce mute & antilink on commands in groups ──────────────
             if (isGroup) {
-                const muteBlocked = await enforceMute(sock, msg);
-                if (muteBlocked) {
-                    console.log(`🔇 Message blocked by mute (${Date.now() - msgStart}ms)`);
-                    continue;
-                }
+                await enforceMute(sock, msg);
                 
                 const linkBlocked = await handleAntiLink(sock, msg);
                 if (linkBlocked) {
