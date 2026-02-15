@@ -16,14 +16,14 @@ function getMenuText() {
 
 ━━━━━━━━━━━━━━━━━━━━━━
 
-⚙️ *CORE COMMANDS*
+⚙️ *CORE*
 ╔════════════════════
 ║ ${PREFIX}ping
 ║ ${PREFIX}alive
 ║ ${PREFIX}menu / ${PREFIX}help
 ╚════════════════════
 
-🛠️ *UTILITY COMMANDS*
+🛠️ *UTILITY*
 ╔════════════════════
 ║ ${PREFIX}sticker / ${PREFIX}s
 ║ ${PREFIX}toimg / ${PREFIX}toimage  
@@ -34,7 +34,7 @@ function getMenuText() {
 ║ _(reply or write text after)_
 ╚════════════════════
 
-🎭 *FUN COMMANDS*
+🎭 *FUNK*
 ╔════════════════════
 ║ ${PREFIX}meme — random meme
 ║ ${PREFIX}yesno — yes or no with gif
@@ -45,10 +45,10 @@ function getMenuText() {
 ║ ${PREFIX}8ball <question> — fortune
 ╚════════════════════
 
-👥 *GROUP COMMANDS*
+👥 *GROUP*
 ╔════════════════════
-║ ${PREFIX}stalkall — DM all members
-║ ${PREFIX}stalk — DM replied member
+║ ${PREFIX}stalkall — DM all members (dangerous)
+║ ${PREFIX}stalk — DM replied member (safer way)
 ║ ${PREFIX}kick — kick replied member
 ║ ${PREFIX}mute — mute replied member
 ║ ${PREFIX}unmute — unmute replied member

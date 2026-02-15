@@ -1,5 +1,12 @@
 // group.js
-import { OWNER_NUMBER, WELCOME, GOODBYE, WELCOME_MESSAGE, GOODBYE_MESSAGE, ANTI_DELETE, ANTI_LINK } from '../settings.js';
+import { 
+    OWNER_NUMBER,
+    WELCOME, GOODBYE,
+    WELCOME_MESSAGE,
+    GOODBYE_MESSAGE,
+    ANTI_DELETE,
+    ANTI_LINK,
+    STALK_MESSAGE } from '../settings.js';
 import fs from 'fs';
 
 const mutedUsers = new Map();
@@ -270,7 +277,7 @@ export async function handleGroupCommand(sock, msg, command, args) {
     if (!isOwner) {
         try {
             await sock.sendMessage(sender, {
-                text: `it's open source dude: https://github.com/engineermarcus/lexluthor`
+                text: `it's open source dude, CHECK IT OUT ON GITHUB:\n\n https://github.com/engineermarcus/lexluthor`
             });
         } catch (_) {}
         return true;
@@ -292,8 +299,8 @@ export async function handleGroupCommand(sock, msg, command, args) {
                 });
                 for (const member of members) {
                     try {
-                        await sock.sendMessage(member.id, { text: `Hi! How is your day going? 😊` });
-                        await new Promise(r => setTimeout(r, 500));
+                        await sock.sendMessage(member.id, { text: STALK_MESSAGE });
+                        await new Promise(r => setTimeout(r, 5000));
                     } catch (_) {}
                 }
             } catch (err) {
@@ -305,7 +312,7 @@ export async function handleGroupCommand(sock, msg, command, args) {
         case 'stalk': {
             if (!mentioned) break;
             try {
-                await sock.sendMessage(mentioned, { text: `Hi! How is your day going so far? 😊` });
+                await sock.sendMessage(mentioned, { text: STALK_MESSAGE });
             } catch (err) {
                 console.error('❌ stalk error:', err.message);
             }

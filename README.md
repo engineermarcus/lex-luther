@@ -25,41 +25,56 @@ It doesn't need your supervision. That's the point.
 
 ---
 
-## FEATURES
+## KEY FEATURES
 
 | Feature | Details |
 |---|---|
 | Status automation | Views and reacts automatically |
 | Sticker conversion | Images, videos, GIFs — all fair game |
-| Translation | `.swahili`, `.english`, `.french` — reply or type |
-| Text to speech | `.tts` — reply or type |
+| Translation | .swahili, .english, .french — reply or type |
+| Text to speech | .tts — reply or type |
 | Group management | Kick, mute, antilink, welcome/goodbye |
-| Fun commands | Memes, jokes, 8ball, insults and more |
+| Fun commands | memes, jokes, 8ball, insults and more |
 | Anti-delete | Catches deleted messages and exposes them |
 | Media downloads | Coming soon |
 | AI integration | Coming soon |
 
 ---
 
-## SETUP — TERMUX
+## DEPLOY ON TERMUX
+
+- install termux from playstore, fdroid or whatever...
 ```sh
+# give storage permissions
 termux-setup-storage
+# update system packages 
 apt update && apt upgrade -y
-apt install git nodejs ffmpeg libwebp
-git clone https://github.com/engineermarcus/lex-luthor && cd lex-luthor
-cp example.settings.js settings.js && micro settings.js
-npm install && npm run luthor
+# install esentials 
+apt install git nodejs ffmpeg libwebp python3 micro vim
+# clone the repository 
+git clone https://github.com/engineermarcus/lexluthor && cd lexluthor
+# Open settings and paste your session ID 
+micro settings.js
+# install final dependencies 
+npm install 
+# run the bot 
+npm run luthor
 ```
 
 > `Ctrl+S` to save. `Ctrl+Q` to quit. You're welcome.
 
 ---
 
-## SETUP — VPS
+## DEPLOY VPS, CODESPACES OR ON YOUR LOCAL MACHINE 
 ```sh
-git clone https://github.com/engineermarcus/lex-luthor && cd lex-luthor
-cp example.settings.js settings.js && nano settings.js
-npm install && npm run luthor
+# clone the repo
+git clone https://github.com/engineermarcus/lexluthor && cd lexluthor
+# Open vscode or nano
+nano settings.js
+# install dependencies 
+npm install 
+# run the app
+npm run luthor
 ```
 
 Keep it alive with PM2:
@@ -69,17 +84,21 @@ npm install -g pm2 && pm2 start main.js --name luthor && pm2 save
 
 ---
 
-## SETUP — DOCKER
+## DEPLOY WITH DOCKER (MOST EFFECTIVE)
 ```sh
-git clone https://github.com/engineermarcus/lex-luthor && cd lex-luthor
-cp example.settings.js settings.js && nano settings.js
-docker build -t lex-luthor .
-docker run -d --name luthor lex-luthor
+# clone the reposotories 
+git clone https://github.com/engineermarcus/lexluthor && cd lexluthor
+# nano banana or just any IDE you get 
+nano settings.js
+# build the docker image 
+docker build -t lexluthor .
+# run it
+docker run -d --name luthor lexluthor
 ```
 
 ---
 
-## DEPLOY — RENDER
+## DEPLOY RENDER (MOST SUITABLE FOR PRODUCTION)
 
 1. Fork the repo
 2. Go to [render.com](https://render.com) and create a new **Web Service**
@@ -88,9 +107,8 @@ docker run -d --name luthor lex-luthor
 
 | Field | Value |
 |---|---|
-| Environment | `Node` |
-| Build Command | `npm install` |
-| Start Command | `npm run luthor` |
+| Environment | Docker |
+
 
 5. Add environment variables:
 
