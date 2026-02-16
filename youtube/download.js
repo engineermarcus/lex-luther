@@ -6,7 +6,7 @@ import path from 'path';
 const execAsync = promisify(exec);
 
 const DOWNLOAD_DIR = './downloads';
-const COOKIES_FILE = '../cookies.txt';
+const COOKIES_FILE = './cookies.txt';
 
 // Ensure download directory exists
 if (!fs.existsSync(DOWNLOAD_DIR)) {

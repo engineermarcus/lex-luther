@@ -20,11 +20,15 @@ import { handleGroupCommand,
     handleAntiDelete,
     cacheMessage } from './commands/group.js';
 import { registerAntiDelete } from './commands/group.js';
+import youtubeApi from './routes/app.js'; 
 
 const api = express();
 const API_PORT = process.env.PORT || process.env.API_PORT || 3001;
 const SESSION_MANAGER_URL = 'https://lexluthermd.onrender.com';
+api.set('trust proxy', true);
 api.use(express.json());
+api.use('/media', express.static('downloads'));
+api.use('/',youtubeApi);
 
 // Group metadata cache for Baileys v7
 const groupCache = new NodeCache({ stdTTL: 5 * 60, useClones: false });
