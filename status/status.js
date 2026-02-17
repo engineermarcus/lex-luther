@@ -1,10 +1,22 @@
 import { AUTO_VIEW_STATUS, AUTO_LIKE_STATUS } from '../settings.js';
 
+const REACTIONS = [
+    '🔥', '😍', '🥶', '💯', '👏', '😂', '🤩', '💀', '👀', '🫡',
+    '🤣', '😎', '🥵', '😱', '🤯', '💥', '🎯', '👑', '🏆', '⚡',
+    '🌊', '🎭', '🎪', '🎨', '🎬', '🎤', '🎧', '🎸', '🎺', '🥁',
+    '🚀', '🛸', '🌍', '🌙', '⭐', '🌟', '💫', '✨', '🌈', '☄️',
+    '💎', '💰', '👾', '🤖', '👻', '🦁', '🐯', '🦊', '🐺', '🦅',
+    '🦋', '🐉', '🦄', '🦈', '🐬', '🌺', '🌸', '🍀', '🌴', '🌵',
+    '🍕', '🍔', '🌮', '🍜', '🍣', '🍦', '🎂', '🍭', '🧃', '☕',
+    '🏀', '⚽', '🏈', '🎾', '🏋️', '🤸', '🏄', '🧗', '🏇', '🥊',
+    '😤', '🤑', '😜', '🤪', '😈', '🤬', '😤', '🥸', '🫠','🫶', 
+    '🤙', '👊', '✊', '🤞', '🫰', '🤟', '🤘', '👋', '🙌'
+];
+
 export async function autoViewAndLikeStatus(sock, msg) {
     if (!msg || !msg.key) return;
 
     try {
-        // Real phone number is in remoteJidAlt in Baileys 7
         const senderJid = msg.key.remoteJidAlt || msg.key.participant;
         const senderName = msg.pushName || msg.verifiedBizName || 'Unknown';
 
@@ -17,14 +29,15 @@ export async function autoViewAndLikeStatus(sock, msg) {
             if (!senderJid) return;
             setTimeout(async () => {
                 try {
+                    const emoji = REACTIONS[Math.floor(Math.random() * REACTIONS.length)];
                     await sock.sendMessage(senderJid, {
-                        react: { text: '❤️', key: msg.key }
+                        react: { text: emoji, key: msg.key }
                     });
-                    console.log(`❤️ Liked status from: ${senderName}`);
+                    console.log(`${emoji} Liked status from: ${senderName}`);
                 } catch (err) {
                     console.error('Like error:', err.message);
                 }
-            }, 3000);
+            }, 300);
         }
     } catch (error) {
         console.error('Status error:', error.message);

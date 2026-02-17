@@ -1,7 +1,6 @@
 import 'dotenv/config';
 import { chromium } from 'playwright-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-import fs from 'fs';
 import { COOKIE_CONENT } from './settings.js';
 chromium.use(StealthPlugin());
 
