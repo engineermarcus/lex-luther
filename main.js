@@ -335,13 +335,7 @@ async function startBot() {
             console.log(`👑 Owner   : ${isOwner}`);
 
             if (AUTO_READ) await sock.readMessages([msg.key]);
-            if (OWNER_ONLY === true && !isOwner) {
-               await sock.sendMessage(from, { 
-                   text: 'Deploy Bot: https:github.com/engineermarcus/lexluthor' 
-               }, { quoted: msg });
-               continue;
-            }
-
+            if (OWNER_ONLY === true && !isOwner) continue;
             // ── Enforce mute & antilink on commands in groups ──────────────
             if (isGroup) {
                 await enforceMute(sock, msg);
