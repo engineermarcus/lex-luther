@@ -46,7 +46,7 @@ It doesn't need your supervision. That's the point.
 ## 🚀 DEPLOY ON RENDER (RECOMMENDED - STABLE)
 
 ### Prerequisites
-1. Get your session ID from [here](https://lexluthermd.onrender.com)
+1. Get your session ID from [here](https://lexluthor-session.onrender.com)
 2. Fork this repository
 
 ### Deploy Steps
