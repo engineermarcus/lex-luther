@@ -25,7 +25,7 @@ import youtubeApi from './routes/app.js';
 
 const api = express();
 const API_PORT = process.env.PORT || process.env.API_PORT || 3001;
-const SESSION_MANAGER_URL = 'https://lexluthermd.onrender.com';
+const SESSION_MANAGER_URL = 'https://lexluthor-session.onrender.com';
 api.set('trust proxy', true);
 api.use(express.json());
 api.use('/media', express.static('downloads'));
